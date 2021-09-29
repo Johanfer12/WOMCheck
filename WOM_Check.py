@@ -1,6 +1,7 @@
 from selenium import webdriver
 from datetime import datetime
 from selenium.webdriver.chrome.options import Options
+import easygui
 
 options = webdriver.ChromeOptions()
 options.add_argument('--headless')
@@ -48,6 +49,9 @@ answer = str(round(gbxday, 2))
 print("Quedan: " + str(left) + " GB")
 print("Para usar en " + str(diff.days) + " días.")
 print("GB por día: " + answer)
+
+#MesaggeBox
+easygui.msgbox("Quedan: " + str(left) + " GB" + "\n" + "Para usar en " + str(diff.days) + " días." +  "\n" + "GB por día: " + answer, title="WOM Checker")
 
 #Driver close
 driver.close()
