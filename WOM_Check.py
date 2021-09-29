@@ -1,12 +1,11 @@
 from selenium import webdriver
 from datetime import datetime
-from selenium.webdriver.chrome.options import Options
+import time
 import easygui
 
 options = webdriver.ChromeOptions()
 options.add_argument('--headless')
-driver = webdriver.Chrome(options=options)
-#driver = webdriver.Chrome(executable_path=r'C:\chromedriver_win32\chromedriver.exe', options=options)
+driver = webdriver.Chrome(executable_path=r'E:\OneDrive\Piton\chromedriver.exe', options=options)
 
 #Load login
 login = open('login.txt').read().splitlines()
@@ -26,7 +25,7 @@ driver.find_element_by_xpath('/html/body/div[3]/main/div[3]/div/div[2]/div[2]/di
 
 driver.find_element_by_xpath('/html/body/div[3]/main/div[3]/div/div[2]/div[2]/div[1]/form/div[2]/div/input').send_keys(login[1])
 
-driver.find_element_by_xpath('/html/body/div[3]/main/div[3]/div/div[2]/div[2]/div[1]/form/div[4]/div[1]/div[2]/button').click()
+driver.find_element_by_css_selector('#send2').click()
 
 driver.find_element_by_xpath('/html/body/div[3]/main/div[2]/div[2]/div/div[2]/ul/li[2]/a').click()
 
@@ -51,7 +50,7 @@ print("Para usar en " + str(diff.days) + " días.")
 print("GB por día: " + answer)
 
 #MesaggeBox
-easygui.msgbox("Quedan: " + str(left) + " GB" + "\n" + "Para usar en " + str(diff.days) + " días." +  "\n" + "GB por día: " + answer, title="WOM Checker")
+easygui.msgbox("Uso: " + str(use1) + " GB" + "\n" + "Quedan: " + str(left) + " GB" + "\n" + "Para usar en " + str(diff.days) + " días." +  "\n" + "GB por día: " + answer, title="WOM Checker")
 
 #Driver close
 driver.close()
