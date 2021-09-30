@@ -1,6 +1,5 @@
 from selenium import webdriver
 from datetime import datetime
-import time
 import easygui
 
 options = webdriver.ChromeOptions()
