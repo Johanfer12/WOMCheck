@@ -46,7 +46,7 @@ answer = str(round(gbxday, 2))
 
 print("Quedan: " + str(left) + " GB")
 print("Para usar en " + str(diff.days) + " días.")
-print("GB por día: " + answer)
+print("GB por día : " + answer)
 
 #MesaggeBox
 easygui.msgbox("Uso: " + str(use1) + " GB" + "\n" + "Quedan: " + str(left) + " GB" + "\n" + "Para usar en " + str(diff.days) + " días." +  "\n" + "GB por día: " + answer, title="WOM Checker")
