@@ -7,7 +7,7 @@ options.add_argument('--headless')
 driver = webdriver.Chrome(executable_path=r'E:\OneDrive\Piton\chromedriver.exe', options=options)
 
 #Load login
-login = open('login.txt').read().splitlines()
+login = open("E:\OneDrive\Piton\WOMCheck\login.txt").read().splitlines()
 
 #Get webpage
 driver.get('https://www.wom.co/customer/consumption/')
